@@ -1,0 +1,26 @@
+{
+  "name": "courtly",
+  "version": "1.0.0",
+  "description": "Courtly - đặt sân cầu lông realtime (Express + Socket.IO + PostgreSQL)",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js",
+    "test:race": "node test/concurrent-booking-test.js",
+    "test:staff": "node test/staff-permissions-test.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@fontsource/barlow-condensed": "^5.0.0",
+    "@fontsource/manrope": "^5.0.0",
+    "bcryptjs": "^2.4.3",
+    "express": "^4.19.2",
+    "gsap": "^3.12.5",
+    "jsonwebtoken": "^9.0.2",
+    "lenis": "^1.1.13",
+    "pg": "^8.12.0",
+    "socket.io": "^4.7.5"
+  }
+}

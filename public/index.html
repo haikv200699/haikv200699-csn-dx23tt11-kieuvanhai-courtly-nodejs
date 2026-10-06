@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Courtly – Đặt sân cầu lông</title>
+<link rel="stylesheet" href="/vendor/fonts/barlow-condensed/600.css">
+<link rel="stylesheet" href="/vendor/fonts/barlow-condensed/800.css">
+<link rel="stylesheet" href="/vendor/fonts/manrope/400.css">
+<link rel="stylesheet" href="/vendor/fonts/manrope/600.css">
+<link rel="stylesheet" href="/vendor/fonts/manrope/700.css">
+<link rel="icon" type="image/svg+xml" href="/images/courtly-mark.svg">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="design-system.css">
+<link rel="stylesheet" href="staff-ui.css">
+</head>
+<body class="courtly-ui">
+<nav>
+  <a class="brand" href="#top" aria-label="Courtly — Trang chủ"><img src="/images/courtly-mark.svg" alt="" width="31" height="36"><b>COURTLY</b></a>
+  <div class="links">
+    <div class="nav-section-links" id="navSectionLinks">
+      <a href="#facility">Sân bãi</a>
+      <a href="#assign" id="nav-assign" hidden>Gán lịch</a>
+      <a href="#booking" id="nav-booking">Đặt sân</a>
+      <a href="#mine" id="nav-mine" hidden><span id="navMineLabel">Lịch của tôi</span><span class="notif-dot" id="admNotifDot" aria-hidden="true" hidden>0</span></a>
+      <a href="#admin" id="nav-admin" hidden>Quản trị</a>
+      <button id="profileMenuAccount" type="button">Hồ sơ tài khoản</button>
+      <button id="profileMenuPlayers" type="button" hidden>Tài khoản người chơi</button>
+    </div>
+    <button id="authBtn" class="ghost">Đăng nhập</button>
+    <button id="profileBtn" class="profile-trigger" type="button" aria-label="Mở menu tài khoản" aria-controls="navSectionLinks profileQuickMenu" aria-expanded="false" hidden><img id="navAvatar" alt="" width="36" height="36"></button>
+  </div>
+  <div class="profile-quick-menu" id="profileQuickMenu" hidden><button id="profileDesktopAccount" type="button">Hồ sơ tài khoản</button><button id="profileDesktopPlayers" type="button" hidden>Tài khoản người chơi</button></div>
+</nav>
+
+<section class="hero" id="top">
+  <div class="hero-carousel" id="heroCarousel" data-parallax aria-roledescription="carousel" aria-label="Chương trình khuyến mãi">
+    <div class="hc-slide active" data-i="0">
+      <svg viewBox="0 0 440 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs><radialGradient id="g0" cx="70%" cy="30%" r="75%"><stop offset="0%" stop-color="#2b3a12"/><stop offset="100%" stop-color="#15171a"/></radialGradient></defs>
+        <rect width="440" height="500" fill="url(#g0)"/>
+        <g fill="none" stroke="#c6ff3d" stroke-width="1.4" opacity=".85" transform="translate(10,140)">
+          <rect x="10" y="10" width="420" height="180" opacity=".9"/><rect x="10" y="28" width="420" height="144" opacity=".5"/>
+          <line x1="220" y1="10" x2="220" y2="190" stroke-width="3"/>
+          <line x1="126" y1="10" x2="126" y2="190" opacity=".5"/><line x1="314" y1="10" x2="314" y2="190" opacity=".5"/>
+        </g>
+        <circle cx="360" cy="90" r="46" fill="#c6ff3d" opacity=".14"/><circle cx="360" cy="90" r="26" fill="#c6ff3d" opacity=".22"/>
+        <text x="358" y="98" text-anchor="middle" font-family="Barlow Condensed" font-weight="800" font-size="30" fill="#c6ff3d">01</text>
+      </svg>
+    </div>
+    <div class="hc-slide" data-i="1">
+      <svg viewBox="0 0 440 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs><radialGradient id="g1" cx="70%" cy="30%" r="75%"><stop offset="0%" stop-color="#3a2f10"/><stop offset="100%" stop-color="#15171a"/></radialGradient></defs>
+        <rect width="440" height="500" fill="url(#g1)"/>
+        <g fill="none" stroke="#ffc940" stroke-width="1.4" opacity=".85" transform="translate(10,140)">
+          <rect x="10" y="10" width="420" height="180" opacity=".9"/><rect x="10" y="28" width="420" height="144" opacity=".5"/>
+          <line x1="220" y1="10" x2="220" y2="190" stroke-width="3"/>
+        </g>
+        <circle cx="120" cy="80" r="4" fill="#ffc940"/><circle cx="150" cy="60" r="4" fill="#ffc940"/><circle cx="180" cy="90" r="4" fill="#ffc940"/>
+        <circle cx="340" cy="70" r="46" fill="#ffc940" opacity=".16"/>
+        <text x="338" y="78" text-anchor="middle" font-family="Barlow Condensed" font-weight="800" font-size="22" fill="#ffc940">VIP</text>
+      </svg>
+    </div>
+    <div class="hc-slide" data-i="2">
+      <svg viewBox="0 0 440 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs><radialGradient id="g2" cx="70%" cy="30%" r="75%"><stop offset="0%" stop-color="#1a2e33"/><stop offset="100%" stop-color="#15171a"/></radialGradient></defs>
+        <rect width="440" height="500" fill="url(#g2)"/>
+        <g fill="none" stroke="#7fe0ff" stroke-width="1.4" opacity=".85" transform="translate(10,140)">
+          <rect x="10" y="10" width="420" height="180" opacity=".9"/><rect x="10" y="28" width="420" height="144" opacity=".5"/>
+          <line x1="220" y1="10" x2="220" y2="190" stroke-width="3"/>
+        </g>
+        <circle cx="350" cy="85" r="46" fill="#7fe0ff" opacity=".16"/>
+        <text x="348" y="93" text-anchor="middle" font-family="Barlow Condensed" font-weight="800" font-size="26" fill="#7fe0ff">MỚI</text>
+      </svg>
+    </div>
+    <div class="hc-scrim"></div>
+  </div>
+  <button class="hc-arrow prev" id="hcPrev" aria-label="Chương trình trước" data-magnetic>‹</button>
+  <button class="hc-arrow next" id="hcNext" aria-label="Chương trình sau" data-magnetic>›</button>
+
+  <span class="hc-eyebrow fade" id="heroEyebrow">COURTLY / CẦU LÔNG VIỆT NAM</span>
+  <h1 aria-live="polite"><span class="ln"><span id="heroT1">Đặt sân.</span></span><span class="ln"><span id="heroT2">Chơi ngay.</span></span></h1>
+  <p class="fade" id="heroSub">Chọn sân, chọn giờ và sẵn sàng cho trận đấu. Lịch sân cập nhật trực tiếp, đặt chỗ chỉ trong vài bước.</p>
+  <div class="fade hero-cta"><a class="btn" href="#booking" data-magnetic>Đặt sân ngay <span aria-hidden="true">→</span></a><a class="cta-secondary" href="#facility">Khám phá sân bãi</a></div>
+  <span class="hero-signature" aria-hidden="true">GOOD COURTS.<br>BRIGHTER DAYS.</span>
+  <div class="facts fade"><span><i></i><b id="factCourts">6</b> sân</span><span><i></i>Cập nhật trực tiếp</span><span><i></i>Đặt trong 3 bước</span></div>
+  <div class="hc-dots fade" id="hcDots"></div>
+</section>
+
+<section class="pad" id="facility">
+  <div class="sec-h"><div class="section-heading"><h2>Sân bãi</h2></div></div>
+  <p class="mute" style="max-width:56ch;margin-bottom:36px">Toàn bộ hệ thống sân Courtly được xây theo chuẩn thi đấu, đầu tư đồng bộ về mặt sân, ánh sáng và tiện ích đi kèm để bạn chỉ cần tập trung vào trận đấu.</p>
+  <div class="amenity-grid" tabindex="0" role="region" aria-label="Tiện ích sân bãi, vuốt ngang hoặc dùng phím mũi tên để xem thêm">
+    <article class="amenity" style="--tile-x:0%;--tile-y:0%"><div class="amenity-visual"><div class="amenity-photo" aria-hidden="true"></div></div><div class="amenity-copy"><b>Nhà vệ sinh sạch sẽ</b><p>Khu nam và nữ riêng biệt, vệ sinh thường xuyên trong giờ hoạt động.</p></div></article>
+    <article class="amenity" style="--tile-x:50%;--tile-y:0%"><div class="amenity-visual"><div class="amenity-photo" aria-hidden="true"></div></div><div class="amenity-copy"><b>Nhà tắm tiện nghi</b><p>Phòng tắm và khu thay đồ để bạn thoải mái sau buổi chơi.</p></div></article>
+    <article class="amenity" style="--tile-x:100%;--tile-y:0%"><div class="amenity-visual"><div class="amenity-photo" aria-hidden="true"></div></div><div class="amenity-copy"><b>Sân chuẩn thi đấu</b><p>Mặt sân, lưới và không gian được chăm chút cho từng trận đấu.</p></div></article>
+    <article class="amenity" style="--tile-x:0%;--tile-y:50%"><div class="amenity-visual"><div class="amenity-photo" aria-hidden="true"></div></div><div class="amenity-copy"><b>Quầy nước &amp; đồ ăn nhẹ</b><p>Nạp năng lượng nhanh ngay tại sân giữa các hiệp chơi.</p></div></article>
+    <article class="amenity" style="--tile-x:50%;--tile-y:50%"><div class="amenity-visual"><div class="amenity-photo" aria-hidden="true"></div></div><div class="amenity-copy"><b>Khu để xe rộng rãi</b><p>Không gian gửi xe thuận tiện, dễ ra vào.</p></div></article>
+    <article class="amenity" style="--tile-x:100%;--tile-y:50%"><div class="amenity-visual"><div class="amenity-photo" aria-hidden="true"></div></div><div class="amenity-copy"><b>Ánh sáng &amp; thông gió</b><p>Đèn sáng đều và trần cao giúp trận đấu dễ chịu hơn.</p></div></article>
+    <article class="amenity" style="--tile-x:0%;--tile-y:100%"><div class="amenity-visual"><div class="amenity-photo" aria-hidden="true"></div></div><div class="amenity-copy"><b>Khu vực nghỉ chân</b><p>Ghế ngồi thoải mái để thư giãn trước và sau trận đấu.</p></div></article>
+    <article class="amenity" style="--tile-x:50%;--tile-y:100%"><div class="amenity-visual"><div class="amenity-photo" aria-hidden="true"></div></div><div class="amenity-copy"><b>Tủ đồ cá nhân</b><p>Cất gọn tư trang và thay đồ ngay trong khu sân.</p></div></article>
+    <article class="amenity" style="--tile-x:100%;--tile-y:100%"><div class="amenity-visual"><div class="amenity-photo" aria-hidden="true"></div></div><div class="amenity-copy"><b>Dụng cụ cầu lông</b><p>Vợt, cầu và phụ kiện sẵn có khi bạn cần bổ sung.</p></div></article>
+  </div>
+  <div class="fade" style="margin-top:36px"><a class="btn" href="#booking" data-magnetic>Đặt sân ngay →</a></div>
+</section>
+
+<section class="pad" id="booking">
+  <div class="sec-h"><div class="section-heading"><h2 id="bookingTitle">Đặt sân</h2></div></div>
+  <div class="booking-stage calendar-stage" id="bkDateStage">
+    <div class="calendar-intro"><div><span class="eyebrow">BƯỚC 01 / NGÀY CHƠI</span><h4>Chọn ngày chơi</h4></div></div>
+    <button type="button" id="calendarToggle" class="calendar-toggle" aria-expanded="false" aria-controls="calendarPanel"><span class="calendar-toggle-icon" aria-hidden="true">▦</span><span><small>Ngày chơi</small><strong id="selectedDateText"></strong></span><span class="calendar-chevron" aria-hidden="true">⌄</span></button>
+    <div class="calendar-disclosure" id="calendarPanel" inert aria-hidden="true"><div class="calendar-disclosure-inner"><div class="calendar-panel" aria-label="Chọn ngày chơi">
+      <div class="calendar-toolbar"><button type="button" id="calPrev" class="calendar-arrow" aria-label="Tháng trước">‹</button><strong id="calMonth" aria-live="polite"></strong><button type="button" id="calNext" class="calendar-arrow" aria-label="Tháng sau">›</button></div>
+      <div class="calendar-weekdays" aria-hidden="true"><span>T2</span><span>T3</span><span>T4</span><span>T5</span><span>T6</span><span>T7</span><span>CN</span></div>
+      <div class="calendar-days" id="dates" role="group" aria-label="Các ngày có thể đặt sân"></div>
+    </div></div></div>
+    <div class="schedule-section" id="scheduleSection">
+      <div class="schedule-section-head"><div><h4>2. Chọn sân và giờ <span id="scheduleDateLabel"></span></h4><p class="mute small">Chạm vào ca trống. Chạm thêm các ca liền nhau để tăng thời gian chơi (tối đa 3 giờ).</p></div></div>
+      <div class="schedule-wrap column-view" id="scheduleViewport" tabindex="0" role="region" aria-label="Lịch các sân theo giờ, vuốt ngang để xem sân khác"><div class="schedule-columns" id="courtSchedule"></div></div>
+      <div id="selectionBar" class="selection-bar" hidden><div><small>Đã chọn</small><strong id="selectionText"></strong></div><button type="button" id="selectionContinue" class="btn">Tiếp tục →</button></div>
+      <div class="schedule-legend"><span><i class="legend-free"></i> Trống</span><span><i class="legend-selected"></i> Đang chọn</span><span><i class="legend-booked"></i> Đã đặt</span><span><i class="legend-fixed"></i> Cố định</span><span><i class="legend-past"></i> Đã qua</span><span><i class="legend-maint"></i> Bảo trì</span></div>
+    </div>
+  </div>
+  <div id="bkPublic">
+  <div class="steps">
+    <div class="booking-stage" id="bkCourtStage" hidden>
+      <div class="step2-h"><h4>2. Chọn sân</h4></div>
+      <p class="mute small stage-hint">Chọn một sân để xem các ca còn trống trong ngày đã chọn.</p>
+      <div class="court-grid" id="bkCourts"></div>
+    </div>
+    <div class="booking-stage" id="bkTimeStage" hidden><h4>3. Chọn giờ</h4>
+      <p class="mute small slot-help">Mỗi lựa chọn tương ứng 30 phút. Giờ đã đặt hiện màu xám và không thể chọn; giờ đã qua được ẩn.</p>
+      <div class="slots" id="slots"><p class="mute">Chọn sân để xem giờ trống.</p></div>
+      <div class="duration-total" id="durationTotal" hidden><span>Tổng thời gian</span><b id="durationValue">0 phút</b></div>
+    </div>
+    <aside class="summary" id="summary" hidden>
+      <h4>3. Xác nhận</h4>
+      <p class="mute" id="sumText">Chọn ngày, sân và giờ bắt đầu.</p>
+      <div class="player-form">
+        <label>Tên người chơi<input id="playerName" type="text" autocomplete="name" placeholder="Nguyễn Văn A"></label>
+        <label>Số điện thoại<input id="playerPhone" type="tel" inputmode="tel" autocomplete="tel" placeholder="09xxxxxxxx"></label>
+        <p class="err player-phone-error" id="playerPhoneErr" role="alert" aria-live="polite"></p>
+        <fieldset>
+          <legend>Phương thức thanh toán</legend>
+          <label class="pay-option"><input type="radio" name="paymentMethod" value="onsite" checked><span>Thanh toán tại sân</span></label>
+          <label class="pay-option"><input type="radio" name="paymentMethod" value="transfer"><span>Chuyển khoản</span></label>
+        </fieldset>
+      </div>
+      <div class="total" id="sumPrice">0đ</div>
+      <p id="memberDiscountHint" class="member-discount-hint" hidden>Thành viên cố định · bảng giá ưu đãi</p>
+      <button class="btn" id="confirmBtn" disabled>Xác nhận đặt sân</button>
+      <p class="mute small" id="paymentNote">Thanh toán tại sân khi đến chơi.</p>
+    </aside>
+    <aside class="summary" id="asSummary" hidden>
+      <h4>3. Xác nhận</h4>
+      <p class="mute" id="asSumText">Chọn ngày, sân và giờ bắt đầu.</p>
+      <form class="player-form" id="assignForm">
+        <label>Tên người chơi<div class="player-autocomplete"><input type="text" name="playerName" id="asPlayerName" required placeholder="Nhập tên người chơi…" autocomplete="off"><div class="player-results" id="asPlayerResults" hidden></div></div></label>
+        <label>Số điện thoại<input type="tel" name="playerPhone" id="asPlayerPhone" required placeholder="09xxxxxxxx"></label>
+        <fieldset><legend>Phương thức thanh toán</legend><label class="pay-option"><input type="radio" name="paymentMethod" value="onsite" checked><span>Thanh toán tại sân</span></label><label class="pay-option"><input type="radio" name="paymentMethod" value="transfer"><span>Chuyển khoản</span></label></fieldset>
+        <div class="total" id="asSumPrice">0đ</div><p id="asDiscountHint" class="member-discount-hint" hidden></p>
+        <button class="btn" type="submit" id="asSubmit" disabled>Gán lịch</button><p class="err" id="assignErr" role="alert"></p>
+      </form>
+    </aside>
+  </div>
+  </div>
+</section>
+
+<section class="pad" id="assign" hidden>
+  <div class="sec-h"><div class="section-heading"><span class="eyebrow">ĐẶT SÂN TẠI QUẦY</span><h2>Gán lịch</h2></div></div>
+  <p class="mute" style="max-width:60ch;margin-bottom:28px">Gán lịch trực tiếp cho người chơi (đặt hộ tại quầy, qua điện thoại...). Lịch được xác nhận ngay, không cần giữ chỗ 5 phút.</p>
+  <div class="assign-grid">
+    <div>
+      <div class="booking-stage assign-date-stage" id="asDateStage"><h4>1. Chọn ngày từ Lịch sân</h4><p id="asDateChoice" class="mute">Chưa chọn ngày chơi.</p><a class="ghost assign-calendar-link" href="#booking">Mở lịch sân và chọn ngày →</a></div>
+      <div class="booking-stage" id="asCourtStage" hidden><h4>2. Chọn sân</h4><div class="chips" id="asCourts"></div></div>
+      <div class="booking-stage" id="asTimeStage" hidden><h4>3. Chọn giờ</h4>
+      <p class="mute small slot-help">Mỗi lựa chọn tương ứng 30 phút. Chỉ hiển thị các khung giờ còn trống; giờ đã qua, đã đặt hoặc đang được giữ chỗ sẽ được ẩn.</p>
+      <div class="slots" id="asSlots"><p class="mute">Chọn sân để xem giờ trống.</p></div>
+      <div class="duration-total" id="asDurationTotal" hidden><span>Tổng thời gian</span><b id="asDurationValue">0 phút</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pad" id="mine" hidden>
+  <div class="sec-h"><div class="section-heading"><span class="eyebrow">03 / MỌI TRẬN ĐẤU, MỘT NƠI</span><h2 id="greet">Lịch của tôi</h2></div></div>
+  <div class="today-shell">
+    <div class="today-top"><div><span class="eyebrow">BOOKING TRONG NGÀY</span><h3 id="todayDate"></h3></div><span class="today-count" id="todayCount"></span></div>
+    <div id="todayHead" class="today-columns" aria-hidden="true"></div>
+    <div id="upcoming" class="today-rail" role="region" tabindex="0" aria-label="Booking hôm nay, vuốt dọc hoặc cuộn để xem thêm"></div>
+    <p id="todayHint" class="today-hint" hidden>Vuốt dọc hoặc lăn chuột để xem các booking tiếp theo.</p>
+  </div>
+  <button type="button" class="history-more" id="historyMore">Toàn bộ booking</button>
+</section>
+
+<section class="pad" id="admin" hidden>
+<p id="staffRoleNote" hidden></p><div class="staff-toolbar"><button type="button" id="staffOperationsOpen" class="ghost" hidden>Duyệt giảm giá / Nhật ký</button><button type="button" id="customerExport" class="ghost" hidden>Xuất danh sách khách</button></div>
+  <div class="sec-h"><div class="section-heading"><span class="eyebrow">04 / TỔNG QUAN HOẠT ĐỘNG</span><h2>Quản trị</h2></div></div>
+  <div class="stats" id="stats"></div>
+
+  <div class="sec-h sm" id="revenueHeading"><h4>Doanh thu</h4></div>
+  <div class="rev-panel">
+    <div class="rev-toolbar"><div><span class="eyebrow">KHOẢNG THỜI GIAN</span><button type="button" id="revRangeToggle" class="rev-range-toggle" aria-expanded="false" aria-controls="revCalendar"><span id="revRangeLabel">7 ngày gần nhất</span><span aria-hidden="true">▦</span></button></div><div class="rev-total"><span>Tổng doanh thu</span><b id="revTotal">0đ</b></div></div>
+    <div id="revCalendar" class="rev-calendar" hidden>
+      <div class="rev-presets" role="group" aria-label="Chọn nhanh khoảng ngày"><button type="button" data-rev-preset="7">7 ngày</button><button type="button" data-rev-preset="30">30 ngày</button><button type="button" data-rev-preset="90">90 ngày</button></div>
+      <div class="rev-calendar-main"><div class="rev-month-nav"><button type="button" id="revPrev" aria-label="Tháng trước">‹</button><strong id="revMonth"></strong><button type="button" id="revNext" aria-label="Tháng sau">›</button></div><div class="rev-weekdays" aria-hidden="true"><span>T2</span><span>T3</span><span>T4</span><span>T5</span><span>T6</span><span>T7</span><span>CN</span></div><div id="revDays" class="rev-days" role="group" aria-label="Chọn ngày bắt đầu và kết thúc"></div></div>
+      <div class="rev-calendar-foot"><span id="revSelection" role="status">Chọn ngày bắt đầu, rồi ngày kết thúc</span><button type="button" id="revApply" class="btn" disabled>Áp dụng</button></div>
+    </div>
+    <p id="revError" class="err" role="alert" hidden></p>
+    <div class="rev-chart-scroll" tabindex="0" role="region" aria-label="Biểu đồ doanh thu, vuốt ngang để xem thêm"><div class="chart" id="revChart"></div></div>
+    <p id="revChartHint" class="mute small rev-chart-hint"></p>
+  </div>
+
+  <div class="sec-h sm court-list-head"><h4>Quản lý sân</h4><button id="courtAddToggle" type="button" class="btn" aria-expanded="false" aria-controls="courtForm">+ Thêm sân</button></div>
+  <form class="court-form" id="courtForm" hidden>
+    <label>Tên sân<input type="text" name="name" required placeholder="Court 07"></label>
+    <input type="hidden" name="pricePerHour" value="60000">
+    <label>Giờ mở<input type="time" name="openTime" value="06:00"></label>
+    <label>Giờ đóng<select name="closeTime" data-close-hours required></select></label>
+    <button class="btn" type="submit">Lưu sân</button><button id="courtAddClose" type="button" class="ghost">Hủy</button>
+    <p class="err" id="courtErr" role="alert"></p>
+  </form>
+  <div class="pricing-entry"><div><b>Bảng giá theo khung giờ</b><p class="mute small">Áp dụng chung cho các sân · giá riêng cho người chơi cố định</p></div><button type="button" class="ghost" id="pricingOpen">Xem / sửa bảng giá</button></div>
+  <div class="court-list" id="courtList"></div>
+  <dialog id="courtEditDlg">
+    <form id="courtEditForm" class="court-form">
+      <h3>Chỉnh sửa sân</h3>
+      <input type="hidden" name="id">
+      <label>Tên sân<input type="text" name="name" required></label>
+      <input type="hidden" name="pricePerHour" value="60000">
+      <label>Giờ mở<input type="time" name="openTime" required step="1800"></label>
+      <label>Giờ đóng<select name="closeTime" data-close-hours required></select></label>
+      <label class="court-maintenance-option"><input type="checkbox" name="underMaintenance"><span>Đặt sân ở chế độ bảo trì</span></label>
+      <div class="court-actions"><button class="btn" type="submit">Lưu thay đổi</button><button type="button" id="courtEditDelete" class="ghost danger">Xóa sân</button><button type="button" id="courtEditCancel" class="ghost">Đóng</button></div>
+      <p class="err" id="courtEditErr" role="alert"></p>
+    </form>
+  </dialog>
+
+</section>
+
+<footer class="pad site-footer"><div><a class="brand" href="#top" aria-label="Courtly — Trang chủ"><img src="/images/courtly-mark.svg" alt="" width="31" height="36"><b>COURTLY</b></a><p>Đặt sân nhanh chóng.</p></div><span class="footer-motto">Good courts.<br>Brighter days.</span></footer>
+
+<dialog id="authDlg">
+  <form method="dialog" id="authForm">
+    <h3 id="authTitle">Chào mừng trở lại.</h3>
+    <label id="nameRow" hidden>Họ tên<input name="fullName" autocomplete="name"></label>
+    <label id="phoneRow" hidden>Số điện thoại<input name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="09xxxxxxxx"></label>
+    <label id="authIdentifierLabel">Email hoặc số điện thoại<input id="authIdentifier" name="email" type="text" required autocomplete="username" placeholder="Email hoặc số điện thoại"></label>
+    <label>Mật khẩu<input name="password" type="password" required minlength="6" autocomplete="current-password"></label>
+    <p class="err" id="authErr" role="alert"></p>
+    <button class="btn" type="submit" id="authSubmit">Đăng nhập</button>
+    <button class="link" type="button" id="authSwitch">Chưa có tài khoản? Đăng ký</button>
+    <button class="link" type="button" id="authClose">Đóng</button>
+  </form>
+</dialog>
+
+<dialog id="paymentUnlockDlg" class="confirm-dialog" aria-labelledby="paymentUnlockTitle">
+  <form id="paymentUnlockForm">
+    <h3 id="paymentUnlockTitle">Xác nhận chủ sân</h3>
+    <p class="mute small" id="paymentUnlockHint">Nhập mật khẩu tài khoản quản trị để sửa thông tin nhận tiền.</p>
+    <label>Mật khẩu<input id="paymentUnlockPassword" type="password" autocomplete="current-password" required></label>
+    <p class="err" id="paymentUnlockErr" role="alert"></p>
+    <div class="confirm-actions"><button id="paymentUnlockBack" type="button" class="ghost">Quay lại</button><button id="paymentUnlockSubmit" class="btn" type="submit">Xác nhận</button></div>
+  </form>
+</dialog>
+
+<dialog id="cancelBookingDlg" class="confirm-dialog" aria-labelledby="cancelBookingTitle">
+  <h3 id="cancelBookingTitle">Hủy booking?</h3>
+  <p class="mute small" id="cancelBookingMessage"></p>
+  <div class="confirm-actions"><button id="cancelBookingBack" type="button" class="ghost">Giữ booking</button><button id="cancelBookingConfirm" type="button" class="extras-cancel">Xác nhận hủy</button></div>
+</dialog>
+
+<dialog id="transferDlg" class="transfer-dialog" aria-labelledby="transferTitle">
+  <div class="transfer-head"><div><span class="eyebrow">Thanh toán booking</span><h3 id="transferTitle">Hướng dẫn chuyển khoản</h3></div><button type="button" class="sheet-close" id="transferClose" aria-label="Đóng">×</button></div>
+  <p class="mute small" id="transferStatus">Đang tải thông tin…</p>
+  <div id="transferQrWrap" class="transfer-qr" hidden><img id="transferQr" alt="Mã VietQR chuyển khoản cho booking" width="260" height="260"><p id="transferQrError" class="err" hidden>Không tải được mã QR. Vui lòng chuyển khoản theo thông tin bên dưới.</p></div>
+  <div id="transferDetails" class="transfer-details" hidden>
+    <div><span>Ngân hàng</span><b id="transferBank"></b></div>
+    <div><span>Chủ tài khoản</span><b id="transferAccountName"></b></div>
+    <div><span>Số tài khoản</span><b id="transferAccountNo"></b></div>
+    <div><span>Số tiền sân</span><b id="transferAmount"></b></div>
+    <div><span>Nội dung chuyển khoản</span><b id="transferCode"></b></div>
+  </div>
+  <p class="mute small" id="transferHelp">Booking chỉ được đánh dấu đã thu tiền sau khi chủ sân xác nhận giao dịch.</p>
+  <button type="button" class="btn transfer-done" id="transferDone">Đã hiểu</button>
+</dialog>
+
+<dialog id="profileDlg" class="profile-dialog" aria-labelledby="profileTitle">
+  <div class="profile-heading">
+    <img id="profileAvatar" alt="Ảnh đại diện tài khoản" width="76" height="76">
+    <div><p class="mute small">Hồ sơ của bạn</p><h3 id="profileTitle">Tên tài khoản</h3><button type="button" class="profile-edit" id="profileEdit">Chỉnh sửa thông tin</button></div>
+  </div>
+  <div id="profileOverview" class="profile-overview">
+    <div><span>Số điện thoại</span><strong id="profileViewPhone"></strong></div>
+    <div><span>Email</span><strong id="profileViewEmail"></strong></div>
+    <div id="profileMemberRow"><span>Hạng thành viên</span><strong id="profileViewMember"></strong></div>
+  </div>
+  <form id="profileForm" hidden>
+    <label>Họ tên<input name="fullName" id="profileName" required maxlength="80" autocomplete="name"></label>
+    <label>Số điện thoại<input name="phone" id="profilePhone" type="tel" inputmode="tel" required autocomplete="tel" placeholder="09xxxxxxxx"></label>
+    <label>Email<input id="profileEmail" type="email" readonly aria-readonly="true"></label>
+    <p class="err" id="profileErr" role="alert"></p>
+    <button class="btn" type="submit" id="profileSave">Lưu thay đổi</button>
+    <button class="link" type="button" id="profileCancelEdit">Hủy chỉnh sửa</button>
+  </form>
+  <section id="paymentSettingsSection" class="profile-payment" hidden>
+    <h4>Tài khoản nhận chuyển khoản</h4>
+    <div class="payment-account-row"><span id="paymentSettingsSummary">Đang tải tài khoản nhận tiền…</span><button id="paymentEditBtn" type="button" class="ghost">Sửa thông tin</button></div>
+    <div id="paymentEditor" hidden>
+      <form id="paymentSettingsForm" class="court-form">
+        <label>BIN ngân hàng (6 số)<input name="bankBin" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" required placeholder="Ví dụ: 970415"></label>
+        <label>Tên ngân hàng<input name="bankName" maxlength="80" required placeholder="Tên ngân hàng"></label>
+        <label>Số tài khoản<input name="accountNo" maxlength="19" required placeholder="Số tài khoản nhận tiền"></label>
+        <label>Tên chủ tài khoản<input name="accountName" maxlength="80" required placeholder="Tên trên tài khoản ngân hàng"></label>
+        <button class="btn" type="submit">Lưu thông tin chuyển khoản</button><button id="paymentEditorClose" type="button" class="ghost">Đóng</button>
+        <p id="paymentSettingsErr" class="err" role="alert"></p>
+      </form>
+      <div class="payment-qr-config">
+        <div><strong>Ảnh QR nhận chuyển khoản</strong><p class="mute small">PNG, JPEG hoặc WebP tối đa 5 MB. Tải ảnh mới sẽ thay ảnh đang dùng.</p></div>
+        <div class="payment-qr-stage">
+          <label class="payment-qr-picker"><input id="paymentQrFile" type="file" accept="image/png,image/jpeg,image/webp" aria-label="Chọn ảnh QR chuyển khoản"><span class="payment-qr-picker-icon" aria-hidden="true">▣</span><span><b>Chọn ảnh QR</b><small id="paymentQrFilename">Chưa chọn ảnh · PNG, JPEG, WebP</small></span></label>
+          <div class="payment-qr-preview"><img id="paymentQrPreview" alt="Ảnh QR nhận tiền đang được sử dụng" hidden><span id="paymentQrEmpty" class="mute small">Chưa tải ảnh QR</span><small id="paymentQrStatus" class="mute" hidden>Ảnh QR đang sử dụng</small></div>
+        </div>
+        <div class="payment-qr-controls"><button id="paymentQrUpload" type="button" class="btn" disabled>Tải ảnh QR lên</button><button id="paymentQrRemove" type="button" class="ghost" hidden>Gỡ ảnh QR</button></div>
+        <p class="err" id="paymentQrErr" role="alert"></p>
+      </div>
+    </div>
+  </section>
+  <div class="profile-actions"><button class="link" type="button" id="profileLogout">Đăng xuất</button><button class="link" type="button" id="profileClose">Đóng</button></div>
+</dialog>
+
+<dialog id="accountsDlg" class="accounts-dialog" aria-labelledby="accountsTitle" data-lenis-prevent>
+  <div class="accounts-shell">
+    <header class="accounts-head"><div><span class="eyebrow">COURTLY / QUẢN LÝ</span><h3 id="accountsTitle">Tài khoản người chơi</h3><p class="mute small">Phân nhóm thành viên, theo dõi tần suất chơi và áp dụng ưu đãi cho lượt đặt mới.</p></div><button id="accountsClose" type="button" class="sheet-close" aria-label="Đóng quản lý tài khoản">×</button></header>
+    <div class="accounts-body" id="accountsScroll" tabindex="0" role="region" aria-label="Nội dung quản lý tài khoản, cuộn để xem thêm" data-lenis-prevent>
+      <section class="accounts-manage" aria-labelledby="accountsListTitle">
+        <div class="accounts-toolbar"><div><span class="eyebrow">DANH SÁCH ĐÃ ĐĂNG KÝ</span><h4 id="accountsListTitle">Quản lý thành viên</h4></div><button id="accCreateToggle" type="button" class="btn" aria-expanded="false" aria-controls="accCreatePanel">+ Tạo tài khoản</button></div>
+        <div id="accCreatePanel" class="accounts-create" hidden><form class="court-form" id="accForm">
+          <label>Họ tên<input type="text" name="fullName" maxlength="80" required></label>
+          <label>Email<input type="email" name="email" required placeholder="ten@email.com"></label>
+          <label>Số điện thoại<input type="tel" name="phone" placeholder="09xxxxxxxx"></label>
+          <label>Mật khẩu<input type="password" name="password" required minlength="6"></label>
+          <label>Vai trò<select name="role"><option value="user">Người chơi</option><option value="staff">Ca trưởng quản lý</option></select></label>
+          <button class="btn" type="submit">Tạo tài khoản</button><button id="accCreateClose" type="button" class="ghost">Hủy</button>
+          <p class="err" id="accErr" role="alert"></p>
+        </form></div>
+        <div class="accounts-controls"><div class="accounts-tabs" role="tablist" aria-label="Phân loại tài khoản"><button type="button" role="tab" data-acc-view="fixed" aria-selected="false">Cố định <span id="accFixedCount">0</span></button><button type="button" class="is-active" role="tab" data-acc-view="casual" aria-selected="true">Vãng lai <span id="accCasualCount">0</span></button><button type="button" role="tab" data-acc-view="staff" aria-selected="false">Ca trưởng <span id="accStaffCount">0</span></button></div><label class="accounts-search">Tìm tài khoản<input id="accSearch" type="search" placeholder="Tên, số điện thoại hoặc email…" autocomplete="off"></label></div>
+        <p id="accResultCount" class="mute small" role="status"></p><div id="accList" class="accounts-list" aria-live="polite"></div>
+        <div class="accounts-pager"><button id="accPrev" type="button" class="ghost">← Trước</button><span id="accPageInfo" class="mute small"></span><button id="accNext" type="button" class="ghost">Sau →</button></div>
+        <p class="err" id="accActionErr" role="alert"></p>
+      </section>
+    </div>
+  </div>
+</dialog>
+
+<dialog id="accEditDlg" class="account-edit-dialog" aria-labelledby="accEditTitle" data-lenis-prevent>
+  <div class="account-edit-head"><div><span class="eyebrow">THÔNG TIN TÀI KHOẢN</span><h3 id="accEditTitle">Thông tin tài khoản</h3></div><button type="button" id="accEditClose" class="sheet-close" aria-label="Đóng thông tin tài khoản">×</button></div>
+  <form id="accEditForm"><input type="hidden" name="id"><div class="account-edit-fields"><label>Họ tên<input type="text" name="fullName" maxlength="80" required autocomplete="off"></label><label>Email<input type="email" name="email" required autocomplete="off"></label><label>Số điện thoại<input type="tel" name="phone" inputmode="tel" autocomplete="off" placeholder="09xxxxxxxx"></label><label id="accEditMemberRow">Loại người chơi<select name="memberType"><option value="casual">Vãng lai · giá tiêu chuẩn</option><option value="fixed">Cố định · bảng giá ưu đãi</option></select></label></div><p id="accEditMemberNote" class="mute small">Ưu đãi chỉ áp dụng cho tiền sân của booking mới. Khi chuyển sang vãng lai, lịch lặp sẽ dừng tạo booking mới.</p><div class="account-edit-actions"><button type="submit" class="btn">Lưu thông tin</button></div><p id="accEditErr" class="err" role="alert"></p></form>
+  <section id="staffAccessPanel" class="staff-access" hidden>
+    <h4>Quyền ca trưởng</h4><p class="mute small">Bật quyền theo công việc. Lưu thay đổi sẽ kết thúc các phiên đăng nhập cũ của tài khoản này.</p>
+    <form id="staffAccessForm"><fieldset id="staffAccessFields" disabled>
+      <div class="permission-grid" id="staffPermissionList"></div>
+      <div class="access-limits"><label>Giảm tối đa (%)<input name="maxPercent" type="number" min="0" max="100" step="1" required></label><label>Giảm tối đa (đ)<input name="maxAmount" type="number" min="0" max="2147483647" step="1" required></label></div>
+      <p class="mute small">Mỗi hóa đơn phải nằm trong cả hai hạn mức. Vượt hạn mức sẽ gửi yêu cầu cho chủ sân duyệt.</p>
+      <label class="permission-row danger"><input name="disabled" type="checkbox"><span>Tạm khóa tài khoản ca trưởng</span></label>
+      <label>Lý do thay đổi<textarea name="reason" rows="2" minlength="3" maxlength="500" required placeholder="Ví dụ: Cập nhật quyền cho ca tối…"></textarea></label>
+      <div class="access-actions"><button type="submit" class="btn">Lưu quyền ca trưởng</button></div>
+    </fieldset><p id="staffAccessErr" class="err" role="alert"></p></form>
+  </section>
+
+  <p id="accSchedulePending" class="account-schedule-pending mute small" hidden>Lưu thông tin để mở phần lịch cố định ngay bên dưới.</p>
+  <section id="fixedSchedulePanel" class="fixed-schedule-panel" hidden>
+    <div class="fixed-schedule-head"><div><span class="eyebrow">LỊCH CHƠI HẰNG TUẦN</span><h4 id="fixedScheduleTitle">Lịch cố định</h4></div></div>
+    <p class="mute small">Đổi sân, thứ hoặc giờ cho lịch lặp. Booking đã tạo vẫn giữ nguyên; lịch mới bỏ qua các ngày đã có booking từ lịch cũ và tạo các lượt còn trống trong 30 ngày tới.</p>
+    <form id="fixedScheduleForm"><label>Sân<select id="fixedScheduleCourt" required></select></label><label>Thứ<select id="fixedScheduleWeekday"><option value="1">Thứ 2</option><option value="2">Thứ 3</option><option value="3">Thứ 4</option><option value="4">Thứ 5</option><option value="5">Thứ 6</option><option value="6">Thứ 7</option><option value="0">Chủ nhật</option></select></label><label>Từ<input type="time" id="fixedScheduleStart" step="1800" value="08:00" required></label><label>Đến<select id="fixedScheduleEnd" required></select></label><button type="submit" id="fixedScheduleSubmit" class="btn">Thêm khung giờ</button><button type="button" id="fixedScheduleCancelEdit" class="ghost" hidden>Hủy sửa</button></form>
+    <div id="fixedScheduleRules" class="fixed-schedule-rules"></div>
+    <p id="fixedScheduleErr" class="err" role="alert"></p>
+  </section>
+</dialog>
+
+<dialog id="bookingExtrasDlg" class="extras-dialog" aria-labelledby="extrasTitle" data-lenis-prevent>
+  <div class="extras-head">
+    <button class="sheet-close extras-close" type="button" id="extrasClose" aria-label="Đóng chi tiết booking">×</button>
+    <p class="extras-kicker"><b id="extrasBookingCode">BOOKING</b><span id="extrasPlacedAt"></span></p>
+    <h3 id="extrasTitle">Chi tiết</h3>
+    <div class="extras-identity"><p class="mute small" id="extrasMeta"></p><span class="paid-tag" id="extrasPaidTag" hidden>Đã thanh toán</span></div>
+  </div>
+  <div class="extras-lines" id="extrasLines"></div>
+  <div class="extras-totals" id="extrasTotals" aria-live="polite"></div>
+  <section class="extras-panel extras-services">
+    <h4>Thêm nước, bánh hoặc dịch vụ khác</h4>
+    <form id="extrasProductForm" class="extras-product-form">
+      <select id="extrasPreset" aria-label="Chọn dịch vụ"><option>Nước suối</option><option>Nước ngọt</option><option>Bánh</option><option value="other">Khác</option></select>
+      <div class="extras-quantity-stepper" role="group" aria-label="Số lượng dịch vụ"><input name="quantity" type="number" inputmode="numeric" min="1" max="100" value="1" required aria-label="Số lượng dịch vụ"><button type="button" data-extras-quantity="-1" aria-label="Giảm số lượng">−</button><button type="button" data-extras-quantity="1" aria-label="Tăng số lượng">+</button></div>
+      <input name="unitPrice" type="number" inputmode="numeric" min="1" max="100000000" step="1" required placeholder="Nhập giá bán" aria-label="Đơn giá dịch vụ (đ)">
+      <button class="btn" type="submit">Thêm</button>
+      <label class="extras-custom-service" id="extrasCustomService" hidden>Tên dịch vụ<input name="label" maxlength="100" value="Nước suối" placeholder="Nhập tên dịch vụ" disabled></label>
+    </form>
+  </section>
+  <section class="extras-panel extras-discount" id="extrasDiscountSection" hidden>
+    <h4>Giảm giá</h4>
+    <form id="extrasDiscountForm" class="discount-controls">
+      <input name="value" type="number" inputmode="numeric" min="0" step="1" value="0" required aria-label="Mức giảm giá" title="Nhập 0 để bỏ giảm giá">
+      <select name="type" aria-label="Hình thức giảm giá"><option value="amount">Số tiền (đ)</option><option value="percent">Theo %</option></select>
+      <button type="submit" class="btn">Áp dụng</button>
+    </form>
+    <p class="discount-preview" id="extrasDiscountPreview" aria-live="polite" hidden></p><p class="mute small" id="extrasDiscountNote" hidden></p>
+  </section>
+  <details id="extrasExtendSection" class="extras-extension" hidden>
+    <summary>Gia hạn thời gian chơi</summary>
+    <form id="extrasExtendForm" class="extras-controls">
+      <select name="minutes" aria-label="Thời gian gia hạn"><option value="30">Thêm 30 phút</option><option value="60">Thêm 60 phút</option><option value="90">Thêm 90 phút</option></select>
+      <button class="btn" type="submit">Gia hạn</button>
+    </form>
+  </details>
+  <details id="bookingEditSection" class="extras-extension" hidden><summary>Đổi sân / giờ chơi</summary>
+    <form id="bookingEditForm"><div class="booking-edit-fields"><label>Sân<select name="courtId" required></select></label><label>Ngày chơi<input type="date" name="date" required></label><label>Bắt đầu<input type="time" name="start" step="1800" required></label><label>Kết thúc<select name="end" required><option>05:30</option><option>06:00</option><option>06:30</option><option>07:00</option><option>07:30</option><option>08:00</option><option>08:30</option><option>09:00</option><option>09:30</option><option>10:00</option><option>10:30</option><option>11:00</option><option>11:30</option><option>12:00</option><option>12:30</option><option>13:00</option><option>13:30</option><option>14:00</option><option>14:30</option><option>15:00</option><option>15:30</option><option>16:00</option><option>16:30</option><option>17:00</option><option>17:30</option><option>18:00</option><option>18:30</option><option>19:00</option><option>19:30</option><option>20:00</option><option>20:30</option><option>21:00</option><option>21:30</option><option>22:00</option><option>22:30</option><option>23:00</option><option>23:30</option><option>24:00</option></select></label></div><p class="mute small">Áp dụng bảng giá hiện tại cho giờ mới. Hóa đơn phải chưa có khoản thu.</p><button type="submit" class="ghost">Lưu sân / giờ mới</button></form>
+  </details>
+  <p class="err" id="extrasErr" role="alert"></p>
+  <div class="extras-actions"><button class="extras-cancel" type="button" id="extrasCancel" hidden>Hủy booking</button><button class="btn extras-invoice" type="button" id="extrasPrint">Xuất hóa đơn / Lưu PDF</button><button class="extras-settle" type="button" id="extrasSettle" disabled>Thanh toán</button></div>
+</dialog>
+
+<dialog id="historyDlg" class="history-dialog" aria-labelledby="historyTitle">
+  <div class="history-shell">
+    <div class="history-top">
+      <div><span class="eyebrow">COURTLY / THỐNG KÊ</span><h3 id="historyTitle">Toàn bộ booking</h3><p class="mute small" id="historyDescription">Booking sắp tới, đã chơi và đã hủy.</p></div>
+      <button type="button" class="sheet-close" id="historyClose" aria-label="Đóng toàn bộ booking">×</button>
+    </div>
+    <div class="history-body" id="historyScroll">
+      <form id="historyFilters" class="history-filters" role="search">
+        <label>Tên người chơi<input name="name" type="search" placeholder="Nhập tên…" autocomplete="off"></label>
+        <label>Số điện thoại<input name="phone" type="search" inputmode="tel" placeholder="Nhập số…" autocomplete="off"></label>
+        <label>Sân<input name="court" type="search" placeholder="Tên sân…" autocomplete="off"></label>
+        <label>Ngày chơi<input name="date" type="date" aria-label="Lọc theo ngày chơi"></label>
+        <button type="button" class="history-reset" id="historyReset">Xóa bộ lọc</button>
+      </form>
+      <div class="history-stats" id="historyStats" aria-live="polite"></div>
+      <div class="history-results-head"><h4>Kết quả</h4><span class="mute small" id="historyPageInfo"></span></div>
+      <div id="historyResults" class="history-results" aria-live="polite"></div>
+    </div>
+    <div class="history-foot"><button type="button" id="historyPrev" class="ghost">← Trước</button><span id="historyPager" class="mute small"></span><button type="button" id="historyNext" class="ghost">Sau →</button></div>
+  </div>
+</dialog>
+
+<dialog id="historyBillDlg" class="history-bill-dialog" aria-labelledby="historyBillTitle">
+  <div class="history-bill-head"><div><span class="eyebrow">CHI TIẾT BOOKING</span><h3 id="historyBillTitle">Hóa đơn</h3></div><button type="button" class="sheet-close" id="historyBillClose" aria-label="Đóng hóa đơn">×</button></div>
+  <div id="historyBillContent" aria-live="polite"></div>
+  <p class="err" id="historyBillErr" role="alert"></p>
+  <div class="history-bill-actions"><button type="button" id="historyBillSettle" class="extras-settle" hidden>Xác nhận đã thu tiền</button><button type="button" id="historyBillCancel" class="extras-cancel" hidden>Hủy booking này</button><button type="button" id="historyBillPrint" class="btn" hidden>In / Lưu PDF</button></div>
+</dialog>
+
+<div class="bottom-sheet-backdrop" id="scheduleSheetBackdrop" hidden></div>
+<section class="bottom-sheet" id="scheduleSheet" hidden aria-modal="true" role="dialog" aria-labelledby="scheduleSheetTitle">
+  <div class="bottom-sheet-handle"></div>
+  <div class="bottom-sheet-head">
+    <div><span class="eyebrow">Lịch sân</span><h3 id="scheduleSheetTitle">Chi tiết khung giờ</h3></div>
+    <button type="button" class="sheet-close" id="scheduleSheetClose" aria-label="Đóng">×</button>
+  </div>
+  <p class="mute" id="scheduleSheetMeta"></p>
+  <div class="sheet-booking-info" id="scheduleSheetInfo"></div>
+  <button class="btn" type="button" id="scheduleSheetAction">Đặt sân ngay</button>
+</section>
+<div id="toast" role="status" aria-live="polite"></div>
+
+
+<dialog id="pricingDlg" class="pricing-dialog" aria-labelledby="pricingTitle" data-lenis-prevent>
+  <div class="pricing-head"><div><span class="eyebrow">GIÁ THUÊ SÂN</span><h3 id="pricingTitle">Bảng giá theo giờ</h3></div><button type="button" class="sheet-close" id="pricingClose" aria-label="Đóng bảng giá">×</button></div>
+  <p class="mute small">Đơn vị: đồng / giờ. Ca 30 phút tính nửa đơn giá. Booking đi qua nhiều khung giờ được tính riêng từng ca.</p>
+  <form id="pricingForm">
+    <div class="pricing-groups" id="pricingGroups"></div>
+    <section class="pricing-holidays"><h4>Ngày lễ / Tết</h4><p class="mute small">Chọn các ngày áp dụng bảng giá cuối tuần. Ngày lễ âm lịch cần chọn đúng ngày dương lịch tương ứng mỗi năm.</p>
+      <div class="holiday-add"><label>Ngày lễ<input type="date" id="pricingHolidayDate"></label><button type="button" class="ghost" id="pricingHolidayAdd">+ Thêm ngày</button></div><div id="pricingHolidays" class="holiday-chips"></div>
+    </section>
+    <p class="mute small">Giá mới chỉ áp dụng cho booking tạo sau khi lưu và các lần gia hạn tiếp theo. Giá booking đã tạo được giữ nguyên. Giờ hoạt động của từng sân vẫn chỉnh riêng trong Quản lý sân.</p>
+    <p id="pricingErr" class="err" role="alert"></p><div class="pricing-footer"><span id="pricingSaveStatus" role="status"></span><button class="btn" type="submit" id="pricingSave">Lưu bảng giá</button></div>
+  </form>
+</dialog>
+
+<dialog id="operationReasonDlg" class="access-dialog" aria-labelledby="operationReasonTitle" data-lenis-prevent>
+  <form id="operationReasonForm">
+    <span class="eyebrow">GHI NHẬN THAO TÁC</span><h3 id="operationReasonTitle">Lý do điều chỉnh</h3>
+    <p id="operationReasonHint" class="mute small"></p>
+    <label>Lý do<textarea id="operationReasonText" required minlength="3" maxlength="500" rows="3" placeholder="Ví dụ: Khách đổi lịch chơi…"></textarea></label>
+    <div class="access-actions"><button type="button" id="operationReasonBack" class="ghost">Quay lại</button><button type="submit" class="btn">Xác nhận</button></div>
+  </form>
+</dialog>
+<dialog id="operationsDlg" class="access-dialog operations-dialog" aria-labelledby="operationsTitle" data-lenis-prevent>
+  <div class="account-edit-head"><div><span class="eyebrow">DÀNH CHO CHỦ SÂN</span><h3 id="operationsTitle">Yêu cầu giảm giá</h3></div><button type="button" class="sheet-close" id="operationsClose" aria-label="Đóng">×</button></div>
+  <div class="access-actions"><button type="button" class="ghost" data-operation-view="requests">Chờ duyệt</button><button type="button" class="ghost" data-operation-view="audit">Nhật ký thao tác</button></div>
+  <p class="err" id="operationsErr" role="alert"></p><div id="operationsContent"></div>
+  <div class="access-actions" id="auditPages" hidden><button type="button" class="ghost" id="auditPrev">Trang trước</button><span id="auditPage"></span><button type="button" class="ghost" id="auditNext">Trang sau</button></div>
+</dialog>
+
+<script src="/vendor/gsap/gsap.min.js"></script>
+<script src="/vendor/gsap/ScrollTrigger.min.js"></script>
+<script src="/vendor/lenis/lenis.min.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="pricing.js"></script>
+<script src="permissions.js"></script>
+<script src="app.js"></script>
+<script src="staff-ui.js"></script>
+</body>
+</html>
