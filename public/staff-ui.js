@@ -25,7 +25,9 @@ function applyStaffUI() {
   if(!owner) $('#courtForm').hidden=true;
   $('#stats').hidden=staff && !can('bookingView');
   $('#bookingTitle').textContent=staff&&!can('bookingCreate')?'Lịch sân':'Đặt sân';
-  $('#asSummary').hidden=staff&&!can('bookingCreate');
+  $('#asSummary').hidden =
+  !(owner || (staff && can('bookingCreate'))) ||
+  !asState.selected.length;
 }
 let staffAccessId=null,staffAccessVersion=null;
 async function loadStaffAccess(id) {
