@@ -1,11 +1,11 @@
-# Courtly – Hệ thống đặt sân cầu lông
+# ĐỒ ÁN THỰC TẬP CHUYÊN NGÀNH - XÂY DỰNG WEBSITE QUẢN LÝ ĐẶT CHỖ VÀ SỬ DỤNG SÂN THỂ THAO
 
-Đồ án xây dựng ứng dụng đặt sân, quản lý lịch, thanh toán và phân quyền chủ sân/nhân viên. Công nghệ: Node.js, Express, Socket.IO, PostgreSQL, HTML/CSS/JavaScript.
+Công nghệ: Node.js, Express, Socket.IO, PostgreSQL, HTML/CSS/JavaScript.
 
 ## Tác giả và liên hệ
 
 - Họ tên: **Kiều Văn Hải** – lớp **DX23TT11**.
-- Email: [haikv200699@sv-onuni.edu.vn](mailto:haikv200699@sv-onuni.edu.vn).
+- Email: [haikv200699@sv-onuni.edu.vn].
 - Điện thoại: **0842560318**.
 - GitHub: [haikv200699](https://github.com/haikv200699).
 
@@ -35,54 +35,10 @@
     └── docker-compose.yml   # PostgreSQL 16 cho phát triển
 ```
 
-Các thư mục tài liệu có README để Git lưu được thư mục và hướng dẫn nơi nộp bài. **Chưa có báo cáo tiến độ, luận văn, slide/video hay kết quả bảo vệ được cung cấp**; cần bổ sung tài liệu thật trước khi nộp. Các README hướng dẫn không thay thế tài liệu bắt buộc.
-
-## Cài đặt và chạy nhanh
-
-Cần Node.js (khuyến nghị bản LTS còn được hỗ trợ, package yêu cầu >=18), npm và Docker có Docker Compose. Chạy từ thư mục gốc:
-
-```sh
-git clone https://github.com/haikv200699/haikv200699-csn-dx23tt11-kieuvanhai-courtly-nodejs.git
-cd haikv200699-csn-dx23tt11-kieuvanhai-courtly-nodejs
-docker compose -p courtly -f docker/docker-compose.yml up -d
-cd scr
-npm ci
-npm start
-```
-
-Mở **http://localhost:4000**. Ứng dụng tự khởi tạo schema và migration khi kết nối được PostgreSQL. Nếu từng chạy bản cũ có dữ liệu, xem [lưu ý volume](docker/README.md) trước khi khởi động.
-
-Tài khoản mẫu chỉ được tạo ở chế độ phát triển khi bảng `users` chưa có người dùng:
+Tài khoản mẫu:
 
 | Vai trò | Email | Mật khẩu |
 | --- | --- | --- |
 | Chủ sân | admin@courtly.vn | admin123 |
 | Khách hàng | demo@courtly.vn | demo123 |
 
-Chỉ dùng các tài khoản này để chạy thử cục bộ. Hướng dẫn cấu hình, triển khai production và sơ đồ hệ thống: [setup/README.md](setup/README.md).
-
-## Kiểm thử và tái hiện kết quả
-
-Chạy trong `scr/`:
-
-```sh
-node test/production-bootstrap-test.js
-node test/booking-time-test.js
-```
-
-Các kiểm thử SQL/API dùng PostgreSQL WASM cần cài thêm thư viện kiểm thử cục bộ:
-
-```sh
-npm install --no-save --package-lock=false @electric-sql/pglite
-node test/pricing-sql-test.js
-node test/pricing-api-test.js
-npm run test:staff
-```
-
-Khi ứng dụng và PostgreSQL đang chạy trên cơ sở dữ liệu thử riêng, chạy `npm run test:race` để kiểm tra đặt sân đồng thời. Kiểm thử này tạo tài khoản và booking. Xem [dữ liệu/kịch bản thử](setup/test-data/README.md) để ghi nhận điều kiện và kết quả tương ứng báo cáo.
-
-## Tài liệu đồ án
-
-- [Báo cáo tiến độ](progress-report/README.md).
-- [Tài liệu luận văn](thesis/README.md).
-- [Phần mềm liên quan](soft/README.md).
